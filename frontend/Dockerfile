@@ -13,6 +13,10 @@ RUN npm install
 # Copy the rest of the application code to the container
 COPY . .
 
+RUN chown -R 1001:0 . && chmod -R 777 .
+
+USER 1001
+
 # Exposing Port to the container
 EXPOSE 3000
 
